@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabor Venezolano | Platos Típicos</title>
+  <link rel="stylesheet" href="style.scss">
+</head>
+<body>
+  <include src="components/header.html"></include>
+
+  <main id="main-content" class="container">
+    <section>
+      <h2>Nuestros Platos Típicos Venezolanos</h2>
+      <p>Sumérgete en la diversidad de sabores que ofrece la cocina de Venezuela. Aquí te presentamos algunas de nuestras delicias más emblemáticas.</p>
+
+      <div class="grid">
+        <article class="card">
+<img src="./assets/arepa-destacada.jpg" alt="Arepa Reina Pepiada, rellena de aguacate y pollo">
+          <h3>La Arepa: Versatilidad en cada bocado</h3>
+          <p>El plato nacional por excelencia, perfecto para cualquier momento del día. Descubre sus infinitas combinaciones.</p>
+          <a href="det1.html" aria-label="Ver detalles de la Arepa">Ver Receta</a>
+        </article>
+
+        <article class="card">
+<img src="./assets/pabellon-destacado.png" alt="Pabellón Criollo, plato con arroz, carne mechada, caraotas y tajadas">
+          <h3>Pabellón Criollo: El sabor de la tradición</h3>
+          <p>La combinación perfecta de carne mechada, arroz, caraotas negras y tajadas. Un festín de sabores.</p>
+          <a href="det2.html" aria-label="Ver detalles del Pabellón Criollo">Ver Receta</a>
+        </article>
+
+        <article class="card">
+<img src="./assets/tequenos.jpg" alt="Tequeños dorados y crujientes">
+          <h3>Tequeños: Irresistibles y crujientes</h3>
+          <p>Pequeños bocados de queso envueltos en masa, fritos a la perfección. Ideales para compartir.</p>
+          <a href="#" aria-label="Ver detalles de los Tequeños">Próximamente</a>
+        </article>
+
+        <article class="card">
+<img src="./assets/cachapa.jpg" alt="Cachapa con queso de mano">
+          <h3>Cachapa con Queso de Mano: Dulce y salado</h3>
+          <p>Tortilla de maíz tierno, dulce y jugosa, acompañada de un cremoso queso de mano. Una delicia campestre.</p>
+          <a href="#" aria-label="Ver detalles de la Cachapa">Próximamente</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <include src="components/footer.html"></include>
+  <script>
+  (function() {
+    var check = document.createElement('script');
+    if (!('noModule' in check) && 'onbeforeload' in check) {
+      var support = false;
+      document.addEventListener('beforeload', function(e) {
+        if (e.target === check) {
+          support = true;
+        } else if (!e.target.hasAttribute('nomodule') || !support) {
+          return;
+        }
+        e.preventDefault();
+      }, true);
+
+      check.type = 'module';
+      check.src = '.';
+      document.head.appendChild(check);
+      check.remove();
+    }
+  }());
+</script>
+</body>
+</html>

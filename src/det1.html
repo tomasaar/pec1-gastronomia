@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Arepa Venezolana | Sabor Venezolano</title>
+  <link rel="stylesheet" href="style.scss">
+</head>
+<body>
+  <include src="components/header.html"></include>
+
+  <main id="main-content" class="container">
+    <article>
+      <h2>La Arepa: El Pan de Cada Día</h2>
+<img src="./assets/arepa-principal.png" alt="Arepa Reina Pepiada recién preparada" class="featured-image">
+      
+      <p>La arepa es el símbolo gastronómico más importante de Venezuela. Hecha a base de harina de maíz precocida, su versatilidad permite que se consuma en el desayuno, almuerzo o cena. Su origen se remonta a los ancestros indígenas, quienes cultivaban el maíz y lo procesaban para crear esta masa circular que hoy une a todos los venezolanos.</p>
+      
+      <p>Lo que hace especial a la arepa no es solo su masa crujiente por fuera y suave por dentro, sino los infinitos rellenos que puede albergar. Desde la clásica "Reina Pepiada" (pollo con aguacate y mayonesa) hasta la "Pelúa" (carne mechada con queso amarillo), cada combinación cuenta una historia diferente de la cultura caribeña.</p>
+
+      <p>Prepararla es un ritual en los hogares venezolanos. Se amasa con agua y un toque de sal hasta lograr la consistencia perfecta, se le da forma circular con las manos y se cocina tradicionalmente en un budare. Es un alimento que trasciende clases sociales y regiones, siendo el corazón de la mesa familiar.</p>
+
+      <div class="gallery">
+<img src="./assets/arepa-proceso-1.png" alt="Preparación de la masa de maíz">
+<img src="./assets/arepa-proceso-2.png" alt="Arepas cocinándose en el budare">
+<img src="./assets/arepa-proceso-3.png" alt="Variedad de rellenos para arepas">
+      </div>
+
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kpZx53kkslw?si=3sK59qnR1HtNT1sb" title="YouTube video player" frameborder="0"></iframe>
+      </div>
+
+      <button id="celebrate-btn" class="btn-celebrate">¡Celebrar la Gastronomía!</button>
+    </article>
+  </main>
+
+  <include src="components/footer.html"></include>
+  <script>
+  (function() {
+    var check = document.createElement('script');
+    if (!('noModule' in check) && 'onbeforeload' in check) {
+      var support = false;
+      document.addEventListener('beforeload', function(e) {
+        if (e.target === check) {
+          support = true;
+        } else if (!e.target.hasAttribute('nomodule') || !support) {
+          return;
+        }
+        e.preventDefault();
+      }, true);
+
+      check.type = 'module';
+      check.src = '.';
+      document.head.appendChild(check);
+      check.remove();
+    }
+  }());
+</script>
+</body>
+</html>

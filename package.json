@@ -1,0 +1,32 @@
+{
+  "name": "pec1-gastronomia",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rimraf dist .parcel-cache",
+    "parcel:dev": "parcel src/*.html",
+    "parcel:build": "parcel build src/*.html --public-url ./",
+    "start": "npm-run-all clean parcel:dev",
+    "build": "npm-run-all clean parcel:build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.4",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.16.4",
+    "posthtml-include": "^2.0.1",
+    "rimraf": "^6.1.3",
+    "sass": "^1.99.0"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 10 years",
+    "not dead"
+  ]
+}

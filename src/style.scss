@@ -1,0 +1,164 @@
+// Variables de accesibilidad (Contraste alto)
+$primary-color: linear-gradient(165deg, #ffcc00 0%, #0033a0 50%, #cf142b 100%);; // Azul institucional/bandera
+$accent-color: #856404;  // Amarillo más oscuro para cumplir contraste AA sobre fondo blanco (ya estaba correcto)
+$text-color: #1a1a1a;
+$bg-light: #f9f9f9;
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $bg-light;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Accesibilidad: Skip Link
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: $accent-color; 
+  color: white; 
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+  &:focus { top: 0; }
+}
+
+// Estilos para imágenes hero y generales
+.hero-image {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// Estilos para imágenes de detalle (det1 y det2)
+.featured-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  width: 100%;
+  
+
+  img {
+    width: 100%;
+    height: 70%;
+    border-radius: 6px;
+    padding:2px;
+  }
+}
+
+// Estilo para resaltar el color rojo en elementos específicos
+.text-red {
+  color: #cf142b;
+}
+
+header {
+  background: $primary-color;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  border-radius: 0 0 5px 5px;
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px; // Compensación para el gap manual
+
+    li {
+      margin: 10px; // Fallback para gap en Flexbox
+      a { 
+        color: white; 
+        text-decoration: none; 
+        font-weight: bold; 
+        &:hover { color: $accent-color; } 
+      }
+    }
+  }
+}
+
+// Grid responsive para la página de categoría
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px; // Fallback para gap
+  margin-top: 2rem;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 0;
+    margin-top: 2rem;
+  }
+}
+
+.card {
+  flex: 1 1 300px; // Fallback para navegadores antiguos
+  margin: 10px; // Fallback para gap
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  img { 
+    width: 100%; 
+    height: 200px; 
+    font-family: 'object-fit: cover;'; // Fallback para polyfills como object-fit-images
+    border-radius: 4px; 
+  }
+
+  @supports (display: grid) {
+    margin: 0;
+  }
+}
+
+// Vídeo responsive
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin: 2rem 0;
+  iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+}
+
+footer {
+  background: $primary-color;
+  color: #eee; // Corregido de 'middle' a 'center'
+  margin-top: 3rem;
+  padding: 1rem 0;
+}
+
+// Estilo interactivo para el botón de confetti
+.btn-celebrate {
+  background: $accent-color;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}

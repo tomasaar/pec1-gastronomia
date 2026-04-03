@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pabellón Criollo | Sabor Venezolano</title>
+  <link rel="stylesheet" href="style.scss">
+</head>
+<body>
+  <include src="components/header.html"></include>
+
+  <main id="main-content" class="container">
+    <article>
+      <h2>Pabellón Criollo: Identidad en un Plato</h2>
+<img src="./assets/pabellon-destacado.png" alt="Plato de Pabellón Criollo tradicional" class="featured-image">
+      
+      <p>El Pabellón Criollo es el plato nacional de Venezuela por excelencia. Se compone de cuatro elementos fundamentales: arroz blanco, carne mechada, caraotas negras y tajadas (plátano frito). Se dice que este plato representa la unión de las razas que conformaron la nación, fusionando ingredientes europeos, africanos e indígenas.</p>
+      
+      <p>La clave de un buen pabellón reside en el sazón de la carne mechada y el sofrito de las caraotas. La carne se cocina hasta que está tierna para luego ser deshilachada a mano y guisada con cebolla, pimentón y ajo. Por su parte, las caraotas negras suelen prepararse con un toque dulce o salado, dependiendo de la región del país.</p>
+
+      <p>Este plato no es solo una comida completa y nutritiva, sino un viaje por la historia de Venezuela. Cada bocado ofrece un contraste de texturas y sabores: lo salado de la carne, lo neutro del arroz y el dulzor de las tajadas maduras. Es el reflejo de un mestizaje culinario que sigue vivo en cada rincón de la geografía venezolana.</p>
+
+      <div class="gallery">
+<img src="./assets/pabellon-ingrediente-1.png" alt="Carne mechada bien sazonada">
+<img src="./assets/pabellon-ingrediente-2.png" alt="Caraotas negras tradicionales">
+<img src="./assets/pabellon-ingrediente-3.png" alt="Tajadas de plátano maduro frito">
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/n1B-clxAHgo?si=UByuw8wpZoKEKJCv" title="Cómo preparar un Pabellón Criollo" frameborder="0"></iframe>
+      </div>
+
+      <button id="celebrate-btn" class="btn-celebrate">¡Celebrar la Gastronomía!</button>
+    </article>
+  </main>
+
+  <include src="components/footer.html"></include>
+  <script>
+  (function() {
+    var check = document.createElement('script');
+    if (!('noModule' in check) && 'onbeforeload' in check) {
+      var support = false;
+      document.addEventListener('beforeload', function(e) {
+        if (e.target === check) {
+          support = true;
+        } else if (!e.target.hasAttribute('nomodule') || !support) {
+          return;
+        }
+        e.preventDefault();
+      }, true);
+
+      check.type = 'module';
+      check.src = '.';
+      document.head.appendChild(check);
+      check.remove();
+    }
+  }());
+</script>
+</body>
+</html>
