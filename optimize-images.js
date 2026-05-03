@@ -29,6 +29,12 @@ async function optimizeImage(file) {
 
   for (const format of formats) {
     const outputPath = path.join(outputDir, `${baseName}.${format}`);
+    if (fs.existsSync(outputPath)) {
+      console.log(`Skipping ${outputPath}, already exists`);
+      const stats = fs.statSync(outputPath);
+      converted.push({ format, size: stats.size });
+      continue;
+    }
     const pipeline = sharp(inputPath);
 
     if (format === 'webp') {
@@ -42,6 +48,10 @@ async function optimizeImage(file) {
 
     for (const size of sizes) {
       const responsivePath = path.join(outputDir, `${baseName}-${size}w.${format}`);
+      if (fs.existsSync(responsivePath)) {
+        console.log(`Skipping ${responsivePath}, already exists`);
+        continue;
+      }
       const responsivePipe = sharp(inputPath).resize(size);
       if (format === 'webp') {
         await responsivePipe.webp({ quality: 80 }).toFile(responsivePath);
