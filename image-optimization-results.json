@@ -1,0 +1,98 @@
+[
+  {
+    "name": "arepa-destacada.jpg",
+    "oldFormat": "jpg",
+    "newFormat": "avif",
+    "oldSize": 82761,
+    "newSize": 51058,
+    "improvement": "38.31%"
+  },
+  {
+    "name": "arepa-principal.png",
+    "oldFormat": "png",
+    "newFormat": "avif",
+    "oldSize": 1882613,
+    "newSize": 53295,
+    "improvement": "97.17%"
+  },
+  {
+    "name": "arepa-proceso-1.png",
+    "oldFormat": "png",
+    "newFormat": "avif",
+    "oldSize": 1934662,
+    "newSize": 53939,
+    "improvement": "97.21%"
+  },
+  {
+    "name": "arepa-proceso-2.png",
+    "oldFormat": "png",
+    "newFormat": "avif",
+    "oldSize": 1980834,
+    "newSize": 61683,
+    "improvement": "96.89%"
+  },
+  {
+    "name": "arepa-proceso-3.png",
+    "oldFormat": "png",
+    "newFormat": "avif",
+    "oldSize": 2135380,
+    "newSize": 76141,
+    "improvement": "96.43%"
+  },
+  {
+    "name": "cachapa.jpg",
+    "oldFormat": "jpg",
+    "newFormat": "avif",
+    "oldSize": 62911,
+    "newSize": 32297,
+    "improvement": "48.66%"
+  },
+  {
+    "name": "hero.jpg",
+    "oldFormat": "jpg",
+    "newFormat": "avif",
+    "oldSize": 282073,
+    "newSize": 109986,
+    "improvement": "61.01%"
+  },
+  {
+    "name": "pabellon-destacado.png",
+    "oldFormat": "png",
+    "newFormat": "avif",
+    "oldSize": 1956903,
+    "newSize": 54147,
+    "improvement": "97.23%"
+  },
+  {
+    "name": "pabellon-ingrediente-1.png",
+    "oldFormat": "png",
+    "newFormat": "avif",
+    "oldSize": 1959859,
+    "newSize": 55655,
+    "improvement": "97.16%"
+  },
+  {
+    "name": "pabellon-ingrediente-2.png",
+    "oldFormat": "png",
+    "newFormat": "avif",
+    "oldSize": 1914428,
+    "newSize": 50671,
+    "improvement": "97.35%"
+  },
+  {
+    "name": "pabellon-ingrediente-3.png",
+    "oldFormat": "png",
+    "newFormat": "avif",
+    "oldSize": 1946071,
+    "newSize": 51936,
+    "improvement": "97.33%"
+  },
+  {
+    "name": "tequenos.jpg",
+    "oldFormat": "jpg",
+    "newFormat": "avif",
+    "oldSize": 138840,
+    "newSize": 47368,
+    "improvement": "65.88%"
+  }
+]

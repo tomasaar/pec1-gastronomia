@@ -12,7 +12,11 @@
   <main id="main-content" class="container">
     <article>
       <h2>La Arepa: El Pan de Cada Día</h2>
-<img src="./assets/arepa-principal.png" alt="Arepa Reina Pepiada recién preparada" class="featured-image">
+      <picture class="featured-image">
+        <source media="(max-width: 480px)" srcset="./assets/arepa-principal-480w.avif">
+        <source media="(max-width: 768px)" srcset="./assets/arepa-principal-768w.avif">
+        <img src="./assets/arepa-principal.avif" alt="Arepa Reina Pepiada recién preparada">
+      </picture>
       
       <p>La arepa es el símbolo gastronómico más importante de Venezuela. Hecha a base de harina de maíz precocida, su versatilidad permite que se consuma en el desayuno, almuerzo o cena. Su origen se remonta a los ancestros indígenas, quienes cultivaban el maíz y lo procesaban para crear esta masa circular que hoy une a todos los venezolanos.</p>
       
@@ -21,9 +25,15 @@
       <p>Prepararla es un ritual en los hogares venezolanos. Se amasa con agua y un toque de sal hasta lograr la consistencia perfecta, se le da forma circular con las manos y se cocina tradicionalmente en un budare. Es un alimento que trasciende clases sociales y regiones, siendo el corazón de la mesa familiar.</p>
 
       <div class="gallery">
-<img src="./assets/arepa-proceso-1.png" alt="Preparación de la masa de maíz">
-<img src="./assets/arepa-proceso-2.png" alt="Arepas cocinándose en el budare">
-<img src="./assets/arepa-proceso-3.png" alt="Variedad de rellenos para arepas">
+        <img srcset="./assets/arepa-proceso-1-480w.webp 480w, ./assets/arepa-proceso-1-768w.webp 768w, ./assets/arepa-proceso-1.webp 1024w" 
+             src="./assets/arepa-proceso-1.webp" 
+             alt="Preparación de la masa de maíz">
+        <img srcset="./assets/arepa-proceso-2-480w.webp 480w, ./assets/arepa-proceso-2-768w.webp 768w, ./assets/arepa-proceso-2.webp 1024w" 
+             src="./assets/arepa-proceso-2.webp" 
+             alt="Arepas cocinándose en el budare">
+        <img srcset="./assets/arepa-proceso-3-480w.webp 480w, ./assets/arepa-proceso-3-768w.webp 768w, ./assets/arepa-proceso-3.webp 1024w" 
+             src="./assets/arepa-proceso-3.webp" 
+             alt="Variedad de rellenos para arepas">
       </div>
 
       <div class="video-container">

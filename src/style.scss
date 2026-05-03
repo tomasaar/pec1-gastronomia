@@ -45,6 +45,11 @@ main {
   img {
     max-width: 100%;
     height: auto;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    transition: clip-path 0.5s ease;
+    &:hover {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
   }
 }
 
@@ -97,10 +102,26 @@ header {
         color: white; 
         text-decoration: none; 
         font-weight: bold; 
-        &:hover { color: $accent-color; } 
+        &:hover { color: $accent-color; }
+        transition: color 0.3s ease;
       }
     }
   }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .animated-svg {
+    animation: rotate 5s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 // Grid responsive para la página de categoría

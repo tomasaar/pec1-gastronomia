@@ -12,7 +12,11 @@
   <main id="main-content" class="container">
     <article>
       <h2>Pabellón Criollo: Identidad en un Plato</h2>
-<img src="./assets/pabellon-destacado.png" alt="Plato de Pabellón Criollo tradicional" class="featured-image">
+      <picture class="featured-image">
+        <source media="(max-width: 480px)" srcset="./assets/pabellon-destacado-480w.avif">
+        <source media="(max-width: 768px)" srcset="./assets/pabellon-destacado-768w.avif">
+        <img src="./assets/pabellon-destacado.avif" alt="Plato de Pabellón Criollo tradicional">
+      </picture>
       
       <p>El Pabellón Criollo es el plato nacional de Venezuela por excelencia. Se compone de cuatro elementos fundamentales: arroz blanco, carne mechada, caraotas negras y tajadas (plátano frito). Se dice que este plato representa la unión de las razas que conformaron la nación, fusionando ingredientes europeos, africanos e indígenas.</p>
       
@@ -21,9 +25,15 @@
       <p>Este plato no es solo una comida completa y nutritiva, sino un viaje por la historia de Venezuela. Cada bocado ofrece un contraste de texturas y sabores: lo salado de la carne, lo neutro del arroz y el dulzor de las tajadas maduras. Es el reflejo de un mestizaje culinario que sigue vivo en cada rincón de la geografía venezolana.</p>
 
       <div class="gallery">
-<img src="./assets/pabellon-ingrediente-1.png" alt="Carne mechada bien sazonada">
-<img src="./assets/pabellon-ingrediente-2.png" alt="Caraotas negras tradicionales">
-<img src="./assets/pabellon-ingrediente-3.png" alt="Tajadas de plátano maduro frito">
+        <img srcset="./assets/pabellon-ingrediente-1-480w.avif 480w, ./assets/pabellon-ingrediente-1-768w.avif 768w, ./assets/pabellon-ingrediente-1.avif 1024w" 
+             src="./assets/pabellon-ingrediente-1.avif" 
+             alt="Carne mechada bien sazonada">
+        <img srcset="./assets/pabellon-ingrediente-2-480w.avif 480w, ./assets/pabellon-ingrediente-2-768w.avif 768w, ./assets/pabellon-ingrediente-2.avif 1024w" 
+             src="./assets/pabellon-ingrediente-2.avif" 
+             alt="Caraotas negras tradicionales">
+        <img srcset="./assets/pabellon-ingrediente-3-480w.avif 480w, ./assets/pabellon-ingrediente-3-768w.avif 768w, ./assets/pabellon-ingrediente-3.avif 1024w" 
+             src="./assets/pabellon-ingrediente-3.avif" 
+             alt="Tajadas de plátano maduro frito">
       </div>
 
       <div class="video-container">
