@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf dist .parcel-cache",
     "parcel:dev": "parcel src/*.html",
-    "parcel:build": "parcel build src/*.html --public-url ./",
+    "parcel:build": "npm run build:images && parcel build src/*.html --public-url ./",
     "build:images": "node optimize-images.js",
     "start": "npm-run-all clean parcel:dev",
     "build": "npm-run-all build:images clean parcel:build"
