@@ -34,6 +34,8 @@ Se implementaron varias técnicas de imágenes responsive:
 
 - **srcset con widths**: Utilizado en la imagen hero de la portada y en las tarjetas de la página de categoría. Por ejemplo: `srcset="./assets/hero-480w.avif 480w, ./assets/hero-768w.avif 768w, ./assets/hero.avif 1024w"`. Esto permite al navegador seleccionar la imagen más apropiada según el ancho de la viewport.
 
+- **srcset con densidad de píxels**: Implementado en la tarjeta de tequeños usando `srcset="./assets/tequenos-480w.avif 1x, ./assets/tequenos.avif 2x"`. Esta técnica sirve para entregar imágenes más nítidas en pantallas de alta densidad.
+
 - **Elemento <picture> con art direction**: Aplicado en las imágenes destacadas de las páginas de detalle (det1.html y det2.html). Se utiliza `media` para diferentes breakpoints, permitiendo mostrar versiones recortadas o enfocadas para dispositivos móviles y de escritorio.
 
 - **Imágenes en galerías**: Las imágenes en las galerías de las páginas de detalle también usan srcset para adaptarse al tamaño de pantalla.

@@ -3,12 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const inputDir = 'src/assets';
-const outputDir = 'dist/assets';
-
-// Ensure output directory exists
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir, { recursive: true });
-}
+const outputDir = inputDir;
 
 // Get all image files
 const imageFiles = fs.readdirSync(inputDir).filter(file => {
@@ -19,77 +14,65 @@ const imageFiles = fs.readdirSync(inputDir).filter(file => {
 const results = [];
 
 async function optimizeImage(file) {
+  console.log('Processing', file);
   const inputPath = path.join(inputDir, file);
   const baseName = path.basename(file, path.extname(file));
 
   const originalStats = fs.statSync(inputPath);
   const originalSize = originalStats.size;
-
-  // Get metadata
   const metadata = await sharp(inputPath).metadata();
   const width = metadata.width;
 
-  // Convert to WebP
-  const webpPath = path.join(outputDir, `${baseName}.webp`);
-  await sharp(inputPath)
-    .webp({ quality: 80 })
-    .toFile(webpPath);
-
-  const webpStats = fs.statSync(webpPath);
-  const webpSize = webpStats.size;
-
-  // Convert to AVIF
-  const avifPath = path.join(outputDir, `${baseName}.avif`);
-  await sharp(inputPath)
-    .avif({ quality: 50 })
-    .toFile(avifPath);
-
-  const avifStats = fs.statSync(avifPath);
-  const avifSize = avifStats.size;
-
-  // Choose the best (smallest)
-  let bestFormat, bestSize, bestPath;
-  if (avifSize < webpSize) {
-    bestFormat = 'avif';
-    bestSize = avifSize;
-    bestPath = avifPath;
-    // Remove webp
-    fs.unlinkSync(webpPath);
-  } else {
-    bestFormat = 'webp';
-    bestSize = webpSize;
-    bestPath = webpPath;
-    // Remove avif
-    fs.unlinkSync(avifPath);
-  }
-
-  // Generate responsive sizes
+  const formats = ['webp', 'avif'];
   const sizes = [480, 768].filter(s => s < width);
-  for (const size of sizes) {
-    const respPath = path.join(outputDir, `${baseName}-${size}w.${bestFormat}`);
-    await sharp(inputPath)
-      .resize(size)
-      [bestFormat](bestFormat === 'avif' ? { quality: 50 } : { quality: 80 })
-      .toFile(respPath);
+  const converted = [];
+
+  for (const format of formats) {
+    const outputPath = path.join(outputDir, `${baseName}.${format}`);
+    const pipeline = sharp(inputPath);
+
+    if (format === 'webp') {
+      await pipeline.webp({ quality: 80 }).toFile(outputPath);
+    } else {
+      await pipeline.avif({ quality: 50 }).toFile(outputPath);
+    }
+
+    const stats = fs.statSync(outputPath);
+    converted.push({ format, size: stats.size });
+
+    for (const size of sizes) {
+      const responsivePath = path.join(outputDir, `${baseName}-${size}w.${format}`);
+      const responsivePipe = sharp(inputPath).resize(size);
+      if (format === 'webp') {
+        await responsivePipe.webp({ quality: 80 }).toFile(responsivePath);
+      } else {
+        await responsivePipe.avif({ quality: 50 }).toFile(responsivePath);
+      }
+    }
   }
 
-  const improvement = ((originalSize - bestSize) / originalSize * 100).toFixed(2);
+  const bestVariant = converted.reduce((best, current) => current.size < best.size ? current : best);
+  const improvement = ((originalSize - bestVariant.size) / originalSize * 100).toFixed(2);
 
   results.push({
     name: file,
     oldFormat: path.extname(file).slice(1),
-    newFormat: bestFormat,
+    newFormat: bestVariant.format,
     oldSize: originalSize,
-    newSize: bestSize,
+    newSize: bestVariant.size,
     improvement: `${improvement}%`
   });
 
-  console.log(`Optimized ${file}: ${originalSize} -> ${bestSize} (${improvement}%)`);
+  console.log(`Optimized ${file}: ${originalSize} -> ${bestVariant.size} (${improvement}%) [${bestVariant.format}]`);
 }
 
 async function main() {
   for (const file of imageFiles) {
-    await optimizeImage(file);
+    try {
+      await optimizeImage(file);
+    } catch (error) {
+      console.error(`Error processing ${file}:`, error);
+    }
   }
 
   // Output table
