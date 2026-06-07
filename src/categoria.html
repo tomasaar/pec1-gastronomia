@@ -18,6 +18,7 @@
         <article class="card">
           <img srcset="./assets/arepa-destacada-480w.avif 480w, ./assets/arepa-destacada-768w.avif 768w, ./assets/arepa-destacada.avif 1024w" 
                src="./assets/arepa-destacada.avif" 
+               loading="lazy"
                alt="Arepa Reina Pepiada, rellena de aguacate y pollo"
                sizes="(max-width: 768px) 100vw, 33vw">
           <h3>La Arepa: Versatilidad en cada bocado</h3>
@@ -28,6 +29,7 @@
         <article class="card">
           <img srcset="./assets/pabellon-destacado-480w.avif 480w, ./assets/pabellon-destacado-768w.avif 768w, ./assets/pabellon-destacado.avif 1024w" 
                src="./assets/pabellon-destacado.avif" 
+               loading="lazy"
                alt="Pabellón Criollo, plato con arroz, carne mechada, caraotas y tajadas"
                sizes="(max-width: 768px) 100vw, 33vw">
           <h3>Pabellón Criollo: El sabor de la tradición</h3>
@@ -38,6 +40,7 @@
         <article class="card">
           <img srcset="./assets/tequenos-480w.avif 1x, ./assets/tequenos.avif 2x" 
                src="./assets/tequenos.avif" 
+               loading="lazy"
                alt="Tequeños dorados y crujientes"
                sizes="(max-width: 768px) 100vw, 33vw">
           <h3>Tequeños: Irresistibles y crujientes</h3>
@@ -48,6 +51,7 @@
         <article class="card">
           <img srcset="./assets/cachapa-480w.avif 480w, ./assets/cachapa.avif 1024w" 
                src="./assets/cachapa.avif" 
+               loading="lazy"
                alt="Cachapa con queso de mano"
                sizes="(max-width: 768px) 100vw, 33vw">
           <h3>Cachapa con Queso de Mano: Dulce y salado</h3>
@@ -59,6 +63,6 @@
   </main>
 
   <include src="components/footer.html"></include>
-  <script src="main.js" type="module"></script>
+  <script src="main.js" type="module" defer></script>
 </body>
 </html>

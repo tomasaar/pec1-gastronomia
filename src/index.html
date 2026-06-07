@@ -16,7 +16,8 @@
       
       <div class="hero-image">
         <img srcset="./assets/hero-480w.avif 480w, ./assets/hero-768w.avif 768w, ./assets/hero.avif 1024w" 
-             src="./assets/hero.avif" 
+             src="./assets/hero.avif"
+             fetchpriority="high"
              alt="Mesa servida con arepas, tequeños y cachapas calientes">
       </div>
 
@@ -26,6 +27,6 @@
   </main>
 
   <include src="components/footer.html"></include>
-  <script src="main.js" type="module"></script>
+  <script src="main.js" type="module" defer></script>
 </body>
 </html>
